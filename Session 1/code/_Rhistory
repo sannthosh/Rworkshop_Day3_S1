@@ -1,0 +1,512 @@
+resu <- 1- pois
+resu
+###negative binomial
+dnbinom(10-3, size = 3, prob = 0.09)
+###negative binomial
+dnbinom(27-3, size = 3, prob = 0.09)
+###negative binomial
+dnbinom(33-3, size = 3, prob = 0.09)
+###negative binomial
+dnbinom(10-3, size = 3, prob = 0.09)
+##### Geometric distribution
+dgeom(6,0.3)
+# Poisson
+dpois(7,10)
+poi <- dpois(0:20,10)
+barplot(poi)
+poi <- dpois(0:40,10)
+barplot(poi)
+dpois(0:7,10)
+sum(dpois(0:7,10))
+sum(dpois(0:10,10))
+###negative binomial
+dnbinom(10-3, size = 3, prob = 0.09)
+##### Geometric distribution
+dgeom(6,0.3)
+if (nchar(Sys.getenv("SPARK_HOME")) < 1) {
+Sys.setenv(SPARK_HOME = "c:/spark")
+}
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+df <- as.DataFrame(faithful)
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "1g"))
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "1g"))
+df <- as.DataFrame(faithful)
+head(df)
+people <- read.df("C:/Program Files/spark/examples/src/main/resources/people.json", "json")
+head(people)
+printSchema(people)
+df <- read.df("D:/ML_Spark/LB_Spark/Clean-USA-Housing.csv", "csv", header = "true", inferSchema = "true", na.strings = "NA")
+head(df)
+write.df(people, path = "d:/people.parquet", source = "parquet", mode = "overwrite")
+library(ggplot2)
+Sys.setenv(SPARK_HOME = "/home/spark")
+if (nchar(Sys.getenv("SPARK_HOME")) < 1) {
+Sys.setenv(SPARK_HOME = "/home/spark")
+}
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "2g"))
+# Load training data
+df <- read.df("D:/data/mllib/sample_libsvm_data.txt", source = "libsvm")
+head(df)
+training <- df
+test <- df
+# Fit an binomial logistic regression model with spark.logit
+model <- spark.logit(training, label ~ features, maxIter = 10, regParam = 0.3, elasticNetParam = 0.8)
+# Model summary
+summary(model)
+# Prediction
+predictions <- predict(model, test)
+head(predictions)
+head(df)
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "2g"))
+# Fit a k-means model with spark.kmeans
+t <- as.data.frame(Titanic)
+training <- createDataFrame(t)
+df_list <- randomSplit(training, c(7,3), 2)
+kmeansDF <- df_list[[1]]
+kmeansTestDF <- df_list[[2]]
+kmeansTestDF <- df_list[[2]]
+kmeansModel <- spark.kmeans(kmeansDF, ~ Class + Sex + Age + Freq,
+k = 3)
+# Model summary
+summary(kmeansModel)
+# Get fitted result from the k-means model
+head(fitted(kmeansModel))
+fitted(kmeansModel)
+kmeansModel
+# Get fitted result from the k-means model
+head(fitted(kmeansModel))
+# Prediction
+kmeansPredictions <- predict(kmeansModel, kmeansTestDF)
+head(kmeansPredictions)
+a <- 10
+print((a))
+a
+b <- 20
+b
+b <- 20
+b <- 20
+b
+2
+<
+?
+setwd("E:/data")
+getwd()
+getwd()
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 2/Session 1/Code")
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/Demo")
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 2/Session 1/Code")
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 2/Session 1/Code")
+library(tidyr)
+View(mtcars)
+dim(mtcars)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+mtcarsNew <- mtcars %>% gather(attribute, value, -1)
+head(mtcarsNew)
+mtcarsNew <- mtcars %>% gather(attribute, value)
+head(mtcarsNew)
+View(mtcarsNew)
+mtcarsNew <- mtcars %>% gather(mtcars$names, attribute, value)
+mtcarsNew <- mtcars %>% gather(attribute, value)
+mtcarsNew <- mtcars %>% gather(attribute, value)
+View(mtcarsNew)
+#Spread ...... converts the longer format to wide
+mtcarsSpread <- mtcarsNew %>% spread(attribute, value)
+head(mtcarsSpread)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+View(mtcarsNew)
+#library(dplyr)
+mtcars
+class(mtcars)
+head(mtcars)
+tail(mtcars)
+#display One column
+mtcars$mpg
+class(mtcars$mpg)
+#Display rows
+mtcars[1,]
+mtcars[1:5,]
+mtcars[c(1,6,7),] # to display specified random rows???
+#Display columns
+mtcars[,2]
+mtcars[,1:5]
+mtcars[,c(3,5,7)] # to display specified random columns???
+mtcars$car <- rownames(mtcars)
+mtcars <- mtcars[, c(12, 1:11)]
+head(mtcars)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+head(mtcarsNew)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+View(mtcarsNew)
+mtcarsNew <- mtcars %>% gather(attribute, value, -car)
+View(mtcarsNew)
+dim(mtcarsNew)
+#Spread ...... converts the longer format to wide
+mtcarsSpread <- mtcarsNew %>% spread(attribute, value)
+head(mtcarsSpread)
+View(mtcarsSpread)
+View(mtcars)
+View(mtcars)
+data <- read.csv("dateevent.csv")
+getwd()
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 1/Session 4/code")
+data <- read.csv("dateevent.csv")
+data
+dataNew <- data %>%
+unite(datehour, date, hour, sep = ' ') %>%
+unite(datetime, datehour, min, second, sep = ':')
+dataNew
+#Separate
+data1 <- dataNew %>%
+separate(datetime, c('date', 'time'), sep = ' ') %>%
+separate(time, c('hour', 'min', 'second'), sep = ':')
+data1
+#create dataset
+Name <- c("John", "Tim", NA)
+Sex <- c("men", "men", "women")
+Age <- c(45, 53, NA)
+dt <- data.frame(Name, Sex, Age)
+dt
+#Now will see for missings in the dataset
+is.na(dt)
+# find sum or percentage of missing values
+sum(is.na(dt))
+mean(is.na(dt))*100
+#statistical applications the missing values might be coded with a number, for example 99
+dt$Age[dt$Age == 99] <- NA
+dt
+#statistical applications the missing values might be coded with a number, for example 99
+dt$Age[dt$Age == 53] <- NA
+dt
+#statistical applications the missing values might be coded with a number, for example 99
+dt$Age[dt$Age == NA] <- 53
+dt
+#create dataset
+Name <- c("John", "Tim", NA)
+Sex <- c("men", "men", "women")
+Age <- c(45, 53, NA)
+dt <- data.frame(Name, Sex, Age)
+dt
+#na.omit
+Name <- c("John", "Tim", NA)
+Sex <- c("men", NA, "women")
+Age <- c(45, 53, NA)
+dt <- data.frame(Name, Sex, Age)
+dt
+dt2 <- na.omit(dt)
+dt2
+dt
+#na.rm
+mean(dt$Age)
+mean(dt$Age,na.rm = TRUE)
+#complete.cases
+dt[!complete.cases(dt),]
+nrow(dt[complete.cases(dt),])
+nrow(dt)
+ncol(dt)
+library(dplyr)
+library(ggplot2)
+View(diamonds)
+filter(diamonds, cut=='Good')
+# application of filter function
+diamonds_cut <- filter(diamonds, cut=='Good')
+nrow(diamonds_cut)
+head(diamonds_cut)
+View(diamonds_cut)
+# application of filter function
+df <- filter(diamonds, price > 326 & price < 400)
+dim(df)
+# select function
+df <- select(diamonds, carat, cut, color, clarity, depth, price)
+head(df)
+# mutate function
+df1 <- mutate(diamonds, per_carat_p = price/carat)
+head(df1)
+View(df1)
+# arrange function
+df<-arrange(diamonds,price)
+tail(df)
+# arrange function
+df<-arrange(diamonds,price)
+tail(df)
+# arrange function
+df<-arrange(diamonds,desc(price))
+head(df)
+summarise(df)
+summarise(df1)
+# mutate function
+df1 <- mutate(diamonds, per_carat_p = price/carat)
+summarise(df1)
+summarize(df1)
+summarise(diamonds)
+#summarize function
+summarize(diamonds, mean_price= mean(price, na.rm=T),
+median_price = median(price,na.rm = T))
+#introduction to pipe operator
+df <- diamonds %>%
+filter(cut=="Ideal") %>%
+select(carat, cut, color, price, clarity) %>%
+mutate(price_per_c = price/carat)
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 2/Session 3/code")
+v1 <- c(3,6,7,11,13,22,30,40,44,50,52,61,68,80,94)
+length(v1)
+mean(v1)
+median(v1)
+mode(v1)
+range(v1)
+quantile(v1)
+v2 <- c(3,6,7,11,13,22,30,40)
+median(v2)
+v3 <- c(40,44,50,52,61,68,80,94)
+median(v3)
+#################
+batsman1 <- c(2,15,137,100,5,32,0,97,13,6)
+mean(batsman1)
+sd(batsman1)
+var(batsman1)
+range(batsman1)
+batsman2 <- c(32,56,65,44,29,78,105,37,41,46)
+mean(batsman2)
+sd(batsman2)
+range(batsman2)
+#### Bell curve
+x <- seq(-10, 10, by = .5)
+x
+sd(x)
+y <- dnorm(x, mean = mean(x), sd = sd(x))
+y
+plot(x,y)
+plot(x,y)
+x <- c(2,2,2,2,2,3,3,3,4,4,4,4,5,5,6,7,9)
+y <- dnorm(x, mean = mean(x), sd = sd(x))
+plot(x,y)
+###### categorical vaiable
+grade <- c("D","D","F","F","F","F","F","S","S","S","S","S","T","T","T")
+barplot(table(grade))
+age <- c(seq(10,100,by=2),seq(101,140))
+hist(age)
+mod(v1)
+Mod(v1)
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 3/Session 1")
+myRandomVariables<-rbeta(10000,5,2)*10
+hist(myRandomVariables)
+myRandomVariables<-lbeta(10000,5,2)*10
+mean(myRandomVariables)
+sd(myRandomVariables)
+y <- dnorm(myRandomVariables, mean = mean(myRandomVariables), sd = sd(myRandomVariables))
+plot(myRandomVariables,y)
+mean(myRandomVariables)
+sd(myRandomVariables) #
+sdErr1 <- sd(myRandomVariables)/sqrt(100)
+sdErr1
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+# sampling
+n <- 100
+sampSize <- 30
+xbar <- rep(NA, n)
+for(i in 1:10){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] <- mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+sdErr1
+hist(mySamp)
+mySamp
+xbar
+# sampling
+n <- 100
+sampSize <- 30
+xbar <- rep(NA, n)
+for(i in 1:10){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] <- mean(mySamp)
+}
+xbar
+for(i in 1:10){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] <- mean(mySamp)
+xbar[i]
+}
+xbar <- rep(NA, n)
+xbar[1] <- 1
+xbar
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] <- mean(mySamp)
+xbar[i]
+}
+hist(mySamp)
+# sampling
+n <- 100
+sampSize <- 30
+xbar <- rep(NA, n)
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] = mean(mySamp)
+}
+xbar
+hist(xbar)
+hist(xbar, breaks = 20)
+# sampling
+n <- 100
+sampSize <- 30
+xbar <- rep(NA, n)
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar[i] = mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+hist(xbar, breaks = 20)
+samp1DN <- dnorm(xbar, mean = mean(xbar), sd = sd(xbar))
+plot(xbar, samp1DN)
+mean(xbar
+mean(xbar)
+mean(xbar)
+sd(xbar)
+myRandomVariables<-rbeta(10000,5,2)*10
+hist(myRandomVariables)
+mean(myRandomVariables) #7.13
+sd(myRandomVariables) # 1.61
+# standard error = sd / sqrt(sample size)
+myRandomNormalD <- dnorm(myRandomVariables, mean = mean(myRandomVariables), sd = sd(myRandomVariables))
+n <- 100
+sampSize <- 30
+xbar1 <- rep(NA, n)
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar1[i] = mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+mean(xbar1)
+sd(xbar1)
+hist(xbar1, breaks = 20)
+plot(xbar1, samp1DN)
+samp1DN <- dnorm(xbar1, mean = mean(xbar1), sd = sd(xbar1))
+plot(xbar1, samp1DN)
+# sampling 2
+n2 <- 1000
+sampSize2 <- 30
+xbar2 <- rep(NA, n)
+for(i in 1:n2){
+mySamp <- sample(myRandomVariables, size = sampSize2)
+xbar2[i] = mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+sdErr1
+mean(xbar2)
+sd(xbar2)
+hist(xbar2, breaks = 20)
+samp2DN <- dnorm(xbar2, mean = mean(xbar2), sd = sd(xbar2))
+plot(xbar2, samp2DN)
+# sampling 3
+n3 <- 10000
+sampSize3 <- 30
+xbar3 <- rep(NA, n)
+for(i in 1:n3){
+mySamp <- sample(myRandomVariables, size = sampSize3)
+xbar3[i] = mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+sdErr1
+mean(xbar3)
+sd(xbar3)
+hist(xbar3, breaks = 20)
+samp3DN <- dnorm(xbar3, mean = mean(xbar3), sd = sd(xbar3))
+plot(xbar3, samp3DN)
+# sampling 4
+n4 <- 10000
+sampSize4 <- 200
+xbar4 <- rep(NA, n)
+for(i in 1:n4){
+mySamp <- sample(myRandomVariables, size = sampSize4)
+xbar4[i] = mean(mySamp)
+}
+sdErr4 <- sd(myRandomVariables)/sqrt(sampSize4)
+sdErr4
+mean(xbar4)
+sd(xbar4)
+hist(xbar4, breaks = 20)
+samp4DN <- dnorm(xbar4, mean = mean(xbar4), sd = sd(xbar4))
+plot(xbar4, samp4DN)
+setwd("E:/Desktop Backups/17 Desktop 9Sep18/iPrimed/TTT/DAY 3/Session 1/code")
+a <- c(10, 8, 7, 12, 9, 6, 7, 8)
+mean(a)
+mu <- 13
+var <- 16
+z.test = function(a, mu, var){
+zeta = (mean(a) - mu) / (sqrt(var / length(a)))
+return(zeta)
+}
+z.test(a, mu, var)
+t.test(a, mu = 13, alternative = "two.sided", con.level = 0.95)
+num_flip <- 0:1000
+tot <- 1000
+prb <- 0.5
+y <- dbinom(num_flip,tot,prb)
+y
+y[450]
+class(y)
+barplot(y)
+df <- data.frame(num_flip,y)
+View(df)
+View(df)
+num_flip <- 0:3
+tot <- 3
+prb <- 0.5
+y <- dbinom(num_flip,tot,prb)
+y
+y[2]
+y[4]
+num_flip <- 0:5
+tot <- 3
+prb <- 0.5
+y <- dbinom(num_flip,tot,prb)
+y
+y[4]
+class(y)
+barplot(y)
+# Poisson
+dpois(7,10)
+sum(dpois(0:10,10))
+y <- dpois(0:7,10)
+sum(y)
+poi <- dpois(0:40,10)
+barplot(poi)
+sum(poi, na.rm = TRUE)
+poi
+# Poisson
+dpois(7,10)
+# Poisson
+dpois(7,10)
+sum(dpois(0:10,10))
+sum(poi, na.rm = TRUE)
+pois <- sum(dpois(0:10,10))
+resu <- 1- pois
+resu
+###negative binomial
+dnbinom(10-3, size = 3, prob = 0.09)
+##### Geometric distribution
+dgeom(6,0.3)
+# sampling 1
+n <- 100
+sampSize <- 30
+xbar1 <- rep(NA, n)
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar1[i] = mean(mySamp)
+}
+myRandomVariables<-rbeta(10000,5,2)*10
+# sampling 1
+n <- 100
+sampSize <- 30
+xbar1 <- rep(NA, n)
+for(i in 1:n){
+mySamp <- sample(myRandomVariables, size = sampSize)
+xbar1[i] = mean(mySamp)
+}
+sdErr1 <- sd(myRandomVariables)/sqrt(sampSize)
+sdErr1
+mean(xbar1)
+sd(xbar1)
